@@ -383,6 +383,52 @@ I will use {} to add block scope that allows me to reuse variable names safely l
 } // Heap / Priority Queues
 
 /*************
+ * Sliding Window
+ ************/
+{
+}
+/*************
+ * Prefix Sum
+ ************/
+{
+}
+/*************
+ * Stack
+ ************/
+{
+}
+/*************
+ * Queue
+ ************/
+{
+}
+/*************
+ * Linked List
+ ************/
+{
+}
+/*************
+ * Binary Search
+ ************/
+{
+}
+/*************
+ * Trie
+ ************/
+{
+}
+/*************
+ * Intervals
+ ************/
+{
+}
+/*************
+ * Monotonic Stack
+ ************/
+{
+}
+
+/*************
  * Dynamic Programing
  ************/
 {
@@ -429,6 +475,8 @@ I will use {} to add block scope that allows me to reuse variable names safely l
     dfs(root.right, res);
     // postorder
   }
+
+  // TODO BFS
 } // Binary Trees
 
 /*************
@@ -454,4 +502,6 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   dfs(0); // Starts DFS at node 0
 
   // https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/
+
+  // TODO BFS
 } //Graph
