@@ -37,6 +37,10 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   const output = myTag`That ${person} is a ${age}.`;
   // console.log(output); // "That Mike is a youngster."
 
+  // ******************** Quickly prints so you can see a variable
+  // console.log("myVariable: ", myVariable); // OLD WAY
+  // console.log({ myVariable }); // Faster
+
   // ******************** in keyword for checking if object keys exist
   let objs = { a: "1", b: "2", c: "3", d: "4", e: "5" };
   let checkKey = "a" in objs;
@@ -214,6 +218,41 @@ I will use {} to add block scope that allows me to reuse variable names safely l
    * [1,1,1,1].every( (val, i, arr) => val === arr[0] )   // true
    */
 
+  /**
+   * Pointer problems...
+   * Always look for increasing or decreasing variables in the subproblem - To lower the statespace
+   * https://leetcode.com/problems/container-with-most-water
+   * In this problem the containerArea = width*min(ptr1,ptr2)
+   * Since the width is always decreasing you can really just focus on the min(ptr1,ptr2)
+   */
+
+  /**
+   * Pointer problems...
+   * Common pointer positions 0,1:
+   * let ptr1 = 0
+   * let ptr2 = 1
+   *  while(ptr1 < arr.length-2){
+   *    if(something){ptr1++}
+   *    else{ptr2++}
+   * }
+   * Common pointer positions 0,n-1:
+   * let ptr1 = 0
+   * let ptr2 = height.length-1
+   *  while(ptr1 < ptr2){
+   *    if(something){ptr1++}
+   *    else{ptr2--}
+   * }
+   */
+
+  /**
+   * QUESTIONS TO ASK MYSELF
+   * Would the problem be eaiser with sorted data?
+   * What is the core value to increase/decrease? (Use that to make if/else)
+   * How many pointers do I need?
+   * Does the window only need a +/- to get to next window
+   *
+   */
+
   // ******************** Test if two arrays have same elements:
   var arraySame1 = [
     10, 6, 19, 16, 14, 15, 2, 9, 5, 3, 4, 13, 8, 7, 1, 12, 18, 11, 20, 17,
@@ -388,24 +427,66 @@ I will use {} to add block scope that allows me to reuse variable names safely l
 {
 }
 /*************
- * Prefix Sum
+ * Prefix Sum (Basically memoization)
  ************/
 {
+  // Simple concept: Use an array to save previous solutions so you have access to them later
+  // Here we make arrRes which holds the "sum" of all the values from 0-n in arr.
+  let arr = [1, 2, 3, 4, 5];
+  let arrRes = [arr[0]];
+  for (let i = 1; i < arr.length; i++) {
+    arrRes[i] = arrRes[i - 1] + arr[i];
 }
+  // console.log(arrRes); // [1,3,6,10,15]
 /*************
  * Stack
  ************/
 {
+  // Basic code
+  var stack = [];
+  stack.push(2); // stack is now [2]
+  stack.push(5); // stack is now [2, 5]
+  var i = stack.pop(); // stack is now [2]
+  // console.log(i);            // displays 5
 }
 /*************
  * Queue
  ************/
 {
+  // Basic code
+  var queue = [];
+  queue.push(2); // queue is now [2]
+  queue.push(5); // queue is now [2, 5]
+  var i = queue.shift(); // queue is now [5]
+  // console.log(i); // displays 2
 }
 /*************
  * Linked List
  ************/
 {
+  // Linked List only really used in Javascript when constant time insertion/deletion is needed from the list
+  /** Loop over a list
+    while(head != null){
+        console.log(head.val)
+        head = head.next
+    }
+   */
+  /**Loop over a list with access to prev/curr/next nodes (For reversing a linked list)
+    let prev = null;
+    let next = null;
+    let curr = head;
+    while (curr) {
+        next = curr.next;
+        console.log(prev&&prev.val,curr.val,next&&next.val) //Do work here. Access to prev/curr/next
+        prev = curr;
+        curr = next;
+    }
+  */
+  /** Linked list vs queue?
+   * Queue == FIFO
+   * Stack == LIFO
+   * Linked list is a possible implementation of either a LIFO/FIFO. (Array/Trees can also do this)
+   *  */
 }
 /*************
  * Binary Search
