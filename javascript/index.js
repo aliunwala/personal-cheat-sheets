@@ -586,3 +586,7 @@ I will use {} to add block scope that allows me to reuse variable names safely l
 
   // TODO BFS
 } //Graph
+
+// What data structures to use
+// https://medium.com/codechef-vit/how-to-identify-which-data-structure-to-use-5a1c66ad2742
+
