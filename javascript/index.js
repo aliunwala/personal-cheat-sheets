@@ -87,7 +87,7 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   for (let h = 0; h < 6969100; h++) {}
   let endAt = performance.now();
   let elapsedTime = endAt - startAt;
-  console.log(elapsedTime, "milisec to run.");
+  // console.log(elapsedTime, "milisec to run.");
 
   // ******************** out of order function arguments - using destructuring
   function getFullName({ first, middle, last }) {
@@ -114,6 +114,33 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   let vehicleYearWithDefault = myperson.vehicle?.year ?? 1900; // if we dont get a value we defalt to 1900
   // console.log({ vehicleYear });
   // console.log({ vehicleYearWithDefault });
+
+  // ******************** check for undefined or null (or the opposite) https://stackoverflow.com/questions/2559318/how-to-check-for-an-undefined-or-null-variable-in-javascript
+  let some_variable = undefined;
+  if (some_variable == null) {
+    /*some_variable is either null or undefined*/
+  }
+  // This is usually now done with nullish collesing operator:
+  let a = {};
+  if (a.speed == null) {
+    // Set default if null or undefined
+    a.speed = 42;
+  }
+  a.speed ??= 42;
+  a.speed ?? (a.speed = 42);
+  a.speed = a.speed ?? 42;
+  //-----------------------------------
+  if (some_variable != null) {
+    // Same as:   if (typeof some_variable !== "undefined" && some_variable !== null) {}
+    /*some_variable is not null and not undefined*/
+  }
+  // ******************** general falsy values
+  if (!some_variable) {
+    // some_variable is either null, undefined, 0, NaN, false, or an empty string
+  }
+  if (some_variable) {
+    // we don't get here if some_variable is null, undefined, 0, NaN, false, or ""
+  }
 } //Utility Functions
 
 /************************
