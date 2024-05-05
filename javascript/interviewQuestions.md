@@ -312,3 +312,18 @@ const {strength:classStrength, benches:classBenches,blackBoard:classBlackBoard} 
 4. What would be the result of 3+2+”7″?
 
 - Here, 3 and 2 behave like an integer, and “7” behaves like a string. So 3 plus 2 will be 5. Then the output will be 5+”7″ = 57.
+
+5. Explain Promise.all with async-await in JavaScript
+
+```
+let firstPromise = () => {return new Promise((resolve, reject) => {resolve("Hello! ");}); };
+let secondPromise = () => {return new Promise((resolve, reject) => {resolve("Hi! ");}); };
+
+let promiseExecution = async () => { // Async function to perform execution of all promise
+    let promise = await Promise.all([firstPromise(),secondPromise(),]);
+    console.log(promise);
+};
+
+// Function call
+promiseExecution();
+```

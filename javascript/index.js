@@ -70,6 +70,50 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   // console.log(num); // 10
   // console.log(obj1.item); // changed
   // console.log(obj2.item); // unchanged
+
+  // ******************** Remove duplicates from array
+  const dup = [1, 2, 2, 4, 4, 5, 13, 123, 5, 1, 2, 1];
+  const removeDup = [...new Set(dup)];
+  // const removeDup = Array.from(new Set(dup)); // Also works
+  // console.log(removeDup);
+
+  // ******************** dynamic object key values
+  let dynamic = "dynamicallySetKey";
+  let myobj = { test: "testVal", [dynamic]: "dynamicVal" };
+  // console.log(myobj);
+
+  // ******************** performance checking
+  let startAt = performance.now();
+  for (let h = 0; h < 6969100; h++) {}
+  let endAt = performance.now();
+  let elapsedTime = endAt - startAt;
+  console.log(elapsedTime, "milisec to run.");
+
+  // ******************** out of order function arguments - using destructuring
+  function getFullName({ first, middle, last }) {
+    console.log(first, middle, last);
+  }
+  let first = "A";
+  let middle = "B";
+  let last = "C";
+  // getFullName({ middle, first, last }); // order doest matter as destructuring takes care of it.
+
+  // ******************** optional chaining, empty/null objects, setting defaults with it
+  const myperson = {
+    name: "Dom",
+    age: "24",
+    // // This data might not be on the server
+    // vehicle: {
+    //   year: "2012",
+    // },
+  };
+  // let vehicleYear = myperson.vehicle ? myperson.vehicle.year : undefined; //old way
+  let vehicleYear = myperson.vehicle?.year; // new way, optional chaning
+  let expiry = myperson.vehicle?.warranty?.date; //double chanining
+  let drive = myperson.vehicle?.drive?.(); //checking if a function exists
+  let vehicleYearWithDefault = myperson.vehicle?.year ?? 1900; // if we dont get a value we defalt to 1900
+  // console.log({ vehicleYear });
+  // console.log({ vehicleYearWithDefault });
 } //Utility Functions
 
 /************************
@@ -83,6 +127,10 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   // confirm("Are you sure"); // returns true/false depending on user click
   // prompt("How old are you?", "0"); // input with default value 0, user value returned to code
   // TODO;
+  // localStorage //Its nice storage domain specifc... Not secure.
+  // sessionStorage // Similar to local storage but only per session
+  // document.cookie // Sent with every request - 5KB so very small
+  //
 } // DOM Utility Functions
 
 /*************
@@ -436,8 +484,9 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   let arrRes = [arr[0]];
   for (let i = 1; i < arr.length; i++) {
     arrRes[i] = arrRes[i - 1] + arr[i];
-}
+  }
   // console.log(arrRes); // [1,3,6,10,15]
+}
 /*************
  * Stack
  ************/
@@ -590,3 +639,48 @@ I will use {} to add block scope that allows me to reuse variable names safely l
 // What data structures to use
 // https://medium.com/codechef-vit/how-to-identify-which-data-structure-to-use-5a1c66ad2742
 
+/*************
+ * callback hell, async await
+ ************/
+{
+  // Nasty nested structure of each of asnyc call ==  callbackHell
+  function callbackHell() {
+    setTimeout(() => {
+      const data = { user: "Get user John from server" };
+      // console.log(data);
+      setTimeout(() => {
+        // console.log("Using JohnID get his info from server");
+        setTimeout(() => {
+          //All dependent code has to go here...
+        }, 2000);
+      }, 500);
+    }, 1000);
+  }
+
+  // promises better than call back hell
+  fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      // return console.log(json);
+    })
+    .catch((e) => {
+      // console.log(e, "we are off the map")
+    });
+
+  // async await cleanest version. Remember needs a try catch around the whole thing!!!
+  async function getTodos() {
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos/1"
+      );
+      let data = await response.json();
+      // console.log(data);
+    } catch (e) {
+      console.log("async error");
+      console.log(e);
+    }
+  }
+  getTodos();
+}
