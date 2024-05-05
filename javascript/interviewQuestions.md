@@ -329,8 +329,6 @@
     ```
 
 46. Types of design patterns
-
-    - There are about 26 Patterns currently discovered (I hardly think I will do them all…).
     - 1.  Creational: These patterns are designed for class instantiation. They can be either class-creation patterns or object-creational patterns.
     - 2.  Structural: These patterns are designed with regard to a class's structure and composition. The main goal of most of these patterns is to increase the functionality of the class(es) involved, without changing much of its composition.
     - 3.  Behavioral: These patterns are designed depending on how one class communicates with others.
