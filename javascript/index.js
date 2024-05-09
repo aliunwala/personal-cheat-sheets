@@ -14,6 +14,14 @@ I will use {} to add block scope that allows me to reuse variable names safely l
  * Utility Functions
  ********************/
 {
+  // ******************** Convert to base 2
+  let h = 12;
+  let base2h = h.toString(2);
+  let h1count = base2h.match(/1/g);
+  let h0count = base2h.match(/0/g);
+  // console.log(base2h); //"1100"
+  // console.log("h1count: ", h1count, h1count.length);
+  // console.log("h0count: ", h0count, h0count.length);
   // ******************** Delay some code
   setTimeout(() => {}, 100); // 0.1 second timeout
 
@@ -72,10 +80,46 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   // console.log(obj2.item); // unchanged
 
   // ******************** Remove duplicates from array
+  // Version 1
   const dup = [1, 2, 2, 4, 4, 5, 13, 123, 5, 1, 2, 1];
   const removeDup = [...new Set(dup)];
   // const removeDup = Array.from(new Set(dup)); // Also works
   // console.log(removeDup);
+
+  // Version1 w/obj unorderd [1,2,3] != [3,2,1]
+  const dupobj = [
+    [1, 2, 3],
+    [1, 2, 3],
+    [3, 2, 1],
+    [1, 2, 4],
+  ];
+  const removeDupObj = dupobj.map((e) => JSON.stringify(e));
+  const setObj = [...new Set(removeDupObj)];
+  // console.log(setObj);
+
+  // Version1 w/obj ordered  [1,2,3] === [3,2,1]
+  const dupobjOrder = [
+    [1, 2, 3],
+    [1, 2, 3],
+    [3, 2, 1],
+    [1, 2, 4],
+  ];
+  const removeDupObjOder = dupobjOrder.map((e) =>
+    JSON.stringify(
+      e.sort((a, b) => {
+        return a - b;
+      })
+    )
+  );
+  const setObjOrder = [...new Set(removeDupObjOder)];
+  // console.log(setObjOrder);
+
+  // Version 2
+  var dup2 = ["a", 1, "a", 2, "1"];
+  var unique = dup2.filter((e, idx, arr) => {
+    return arr.indexOf(e) === idx;
+  });
+  // console.log(unique); // ['a', 1, 2, '1']
 
   // ******************** dynamic object key values
   let dynamic = "dynamicallySetKey";
