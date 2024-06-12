@@ -1,3 +1,57 @@
+# System Design Notes
+
+## Things to do
+
+1. Ask question about Requirments
+   - reliablity
+   - scale
+   - #'s of reads vs writes
+   - Availability vs Consistency (how upto date things need to be. Bank vs PhotoScroll)
+   - Latency
+2. Deterimine API calls needed for functionality
+3. Begin High Level Design
+   Common Routes:
+   - Client -> DNS
+   - Client -> CDN
+   - Client -> CDN -> Object Store
+   - Client -> Loadbalancer -> Webserver -> Write APIs -> Object Store
+   - Client -> Loadbalancer -> Webserver -> Write Async APIs -> Queue -> Worker Service -> SQL/NoSQL/ObjectStore DB
+   - Client -> Loadbalancer -> Webserver -> Read/Write/Query APIs -> SQL/NoSQL DB -> Sharding/Federation
+   - Client -> Loadbalancer -> Webserver -> Read/Write/Query APIs -> Memory Cache
+     Other Notes:
+   - SQL/NoSQL DB == [SQL Write Masters] + [SQL Read Slaves]
+4. Go into protocols:
+   - HTTP/Hypertext transfer protocol -
+   - TCP
+   - UDP
+   - RPC
+   - REST
+   - WebHooks
+   - Websocket
+
+## Glossary
+
+ACID
+CAP
+AP
+CP
+Denormaliztion
+Cache Types
+Write Through Cache
+Write Back Cache
+Asynchronism structures - There are just queues
+Message Queues
+Task Queues
+Back Pressure
+HTTP/Hypertext transfer protocol -
+TCP
+UDP
+RPC
+REST
+WebHooks
+Websocket
+Long Polling - HTTP or WebSocket request keeps the request open for an extended period until new data is available. Ensures realtime updates. HTTP better than websocket for one way infomation.
+
 # Non-functional Requirments
 
 reliablity
