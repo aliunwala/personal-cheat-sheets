@@ -14,6 +14,15 @@ I will use {} to add block scope that allows me to reuse variable names safely l
  * Utility Functions
  ********************/
 {
+  // ******************** Adding a property to an object
+  let obj1 = { year: "2025", make: "toyota" };
+  let obj2 = { ...obj1, year: "2026" }; //JS takes the rightmost keys, so the key for 2025 gets overwritten.
+  // console.log(obj2) // {year: '2026', make: 'toyota'}
+
+  // ******************** Comparing primative objects does not work.
+  // console.log(new Number(1) === new Number(1)); // False since both are generic objects
+  // console.log(new Number(1).valueOf() === new Number(1).valueOf()); // True
+  // console.log(new String("1").valueOf() === new String("1").valueOf()); // True
   // ******************** Convert to base 2
   let h = 12;
   let base2h = h.toString(2);
@@ -185,6 +194,12 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   if (some_variable) {
     // we don't get here if some_variable is null, undefined, 0, NaN, false, or ""
   }
+
+  // ******************** Make 2d array with all 0s
+  // The fill() is VERY IMPORTANT as map will not work an empty array.
+  let arr2d = new Array(5).fill().map(() => new Array(3).fill(0));
+  // const arr2d = Array.from({ length: 5 }, () => new Array(3).fill(0)); // Another way to do it
+  // console.log(arr2d);
 } //Utility Functions
 
 /************************
