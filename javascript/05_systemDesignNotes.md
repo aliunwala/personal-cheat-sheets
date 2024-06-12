@@ -1,6 +1,6 @@
 # System Design Notes
 
-## Things to do
+## Things to do in interview
 
 1. Ask question about Requirments
    - reliablity
@@ -28,29 +28,31 @@
    - REST
    - WebHooks
    - Websocket
+5. Looks at app security
 
 ## Glossary
 
-ACID
-CAP
-AP
-CP
-Denormaliztion
-Cache Types
-Write Through Cache
-Write Back Cache
-Asynchronism structures - There are just queues
-Message Queues
-Task Queues
-Back Pressure
-HTTP/Hypertext transfer protocol -
-TCP
-UDP
-RPC
-REST
-WebHooks
-Websocket
-Long Polling - HTTP or WebSocket request keeps the request open for an extended period until new data is available. Ensures realtime updates. HTTP better than websocket for one way infomation.
+    - Performance vs scalability
+    - ACID
+    - CAP
+    - AP
+    - CP
+    - Denormaliztion
+    - Cache Types
+    - Write Through Cache
+    - Write Back Cache
+    - Asynchronism structures - There are just queues
+    - Message Queues
+    - Task Queues
+    - Back Pressure
+    - HTTP/Hypertext transfer protocol -
+    - TCP
+    - UDP
+    - RPC
+    - REST
+    - WebHooks
+    - Websocket
+    - Long Polling - HTTP or WebSocket request keeps the request open for an extended period until new data is available. Ensures realtime updates. HTTP better than websocket for one way infomation.
 
 # Non-functional Requirments
 
