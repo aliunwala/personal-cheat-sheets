@@ -100,8 +100,8 @@
   graph.addEdge(2, 4);
 
   // Perform BFS traversal starting from vertex 0
-  console.log("Breadth First Traversal starting from vertex 0: ");
-  graph.bfs(0);
+  // console.log("Breadth First Traversal starting from vertex 0: ");
+  // graph.bfs(0);
 }
 {
   // Recursion
@@ -277,4 +277,70 @@
   }
 }
 {
+  /** Backtracking - Combination Sum  - given candidates and a target find all valid sums:
+   * Input: candidates = [2,3,5], target = 8
+   * Output: [[2,2,2,2],[2,3,3],[3,5]]
+   *
+   * Intution: Tree/branching structure to find all possiblites.
+   *           Can "cull" bad trees as solutions > target will always fail
+   */
+
+  let candidates = [2, 3, 5];
+  let target = 8;
+  let solutions = [];
+  let bt = function (chain, sum) {
+    if (sum === target) {
+      // if Valid solution then record values
+      solutions.push(chain);
+    }
+    if (sum > target) {
+      // Cull any solutions that will never be correct
+      return;
+    }
+    // Try all possible solutions
+    candidates.forEach((e) => {
+      bt([...chain, e], sum + e);
+    });
+  };
+  bt([], 0);
+  console.log(solutions);
+}
+{
+  // Tree BFS:  https://www.youtube.com/watch?v=hTM3phVI6YQ
+  let bfs = function (root) {
+    if (root) return 0; // base case
+
+    level = 0;
+    let q = [root]; // Add first node
+    while (q.length > 0) {
+      //At current level, add children of every node we pop
+      for (let i = 0; i < q.length; i++) {
+        let tempNode = q.shift();
+        if (tempNode.left) {
+          q.push(tempNode.left);
+        }
+        if (tempNode.right) {
+          q.push(tempNode.right);
+        }
+      }
+      level++;
+    }
+    return level; // If interested in maximum depth/level of tree
+  };
+}
+{
+  // Tree DFS: https://www.youtube.com/watch?v=hTM3phVI6YQ
+  let dfs = function (root) {
+    if (!root) return;
+    console.log(root.val);
+    dfs(root.left);
+    dfs(root.right);
+  };
+}
+{
+  // Tree DFS: (With level/depth) https://www.youtube.com/watch?v=hTM3phVI6YQ
+  let maxDepth = function (root) {
+    if (!root) return 0;
+    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+  };
 }

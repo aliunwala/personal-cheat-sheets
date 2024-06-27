@@ -9,11 +9,35 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   console.log(x); // x === 25
 }
 */
+/********************
+ * Personal Checklist
+ * 1) Sorted Data? Would this problem be easier to solve with sorted data? Remember you can sort data based on a arbitrary key
+ * 2) Is the data monotonically increasing/decreasing?
+ * 2) Multiple Pointers? Would multiple pointers make things eaiser?
+ * 3) Can this problem be broken into sub problems? -- This is probably DP
+ * 4) Does this problem lend itself to a tree-like structure? -- Use recursion/DP/Backtracking
+ * 5) Does storing a previous value make the next value eaier to calcuate? -- Memoization
+ * 6) Would a hashmap give my instant lookup?
+ * 7) Do not need duplicates? Try a set.
+ * 8) If working with A-Z or 1-9 use a array to keep counts (instead of a hash)
+ * 9) If inplace solution add endFlag to array and work on elements and push them back onto the array
+ * 10) Need Max/Min values over and over. You need a max/min heap.
+ *
+ ********************/
 
 /********************
  * Utility Functions
  ********************/
 {
+  // ******************** Check if a tuple is in a set of tuples:
+  const a1 = [
+      [1, 2],
+      [5, 6],
+    ],
+    array5 = [5, 6];
+  const find = JSON.stringify(a1).includes(JSON.stringify(array5));
+  // console.log(find);
+
   // ******************** Adding a property to an object
   let obj1 = { year: "2025", make: "toyota" };
   let obj2 = { ...obj1, year: "2026" }; //JS takes the rightmost keys, so the key for 2025 gets overwritten.
