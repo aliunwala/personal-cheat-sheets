@@ -47,11 +47,14 @@ I will use {} to add block scope that allows me to reuse variable names safely l
   // console.log(new Number(1) === new Number(1)); // False since both are generic objects
   // console.log(new Number(1).valueOf() === new Number(1).valueOf()); // True
   // console.log(new String("1").valueOf() === new String("1").valueOf()); // True
-  // ******************** Convert to base 2
+  // ******************** Convert to base 2  (bitwise, base2)
   let h = 12;
   let base2h = h.toString(2);
   let h1count = base2h.match(/1/g);
   let h0count = base2h.match(/0/g);
+  // Reverse back to decimal. base2->decimal
+  let binary = "1101000"; // code for 104
+  let digit = parseInt(binary, 2);
   // console.log(base2h); //"1100"
   // console.log("h1count: ", h1count, h1count.length);
   // console.log("h0count: ", h0count, h0count.length);

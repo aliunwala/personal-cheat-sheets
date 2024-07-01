@@ -1,0 +1,24 @@
+1) Use brew to install it:
+brew tap espanso/espanso
+brew install espanso
+1) Alternatively install it with executable
+
+2) Use `espanso path` to get this output:
+Config: /Users/{user}/Library/Application Support/espanso
+Packages: /Users/{user}/Library/Application Support/espanso/match/packages
+Runtime: /Users/{user}/Library/Caches/espanso
+
+3) Add config info to:
+cd /Users/{user}/Library/Application\ Support/espanso/match/packages
+mkdir config
+mkdir match
+cd match
+touch base.yml
+
+4) Filesystem will look like this:
+see espansoBase.png
+
+5) Probably want to keep all your hotkeys here:
+/Users/{user}/Library/Application\ Support/espanso/match/packages/match/base.yml
+
+

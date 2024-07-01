@@ -1,0 +1,68 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+
+  - trigger: "for;"
+    replace: "for(let i = 0; i < .length; i++){\n$|$"
+  - trigger: "for;"
+    replace: "for(let j = 0; j < .length; j++){\n$|$"
+  - trigger: "for;"
+    replace: "for ([key, value] of Object.entries(obj)) {\n"
+
+  - trigger: "fori;"
+    replace: "for(let i = 0; i < .length; i++){\n$|$"
+  - trigger: "forj;"
+    replace: "for(let j = 0; j < .length; j++){\n$|$"
+  - trigger: "fork;"
+    replace: "for(let k = 0; k < .length; k++){\n$|$"
+  - trigger: "forobj;"
+    replace: "for ([key, value] of Object.entries()) {\n"
+
+  - trigger: "if;"
+    replace: "if($|$){\n"
+  - trigger: "elseif;"
+    replace: "else if($|$){\n\n"
+  - trigger: "else;"
+    replace: "else{\n$|$\n"
+
+  - trigger: "try;"
+    replace: "try {\n"
+  - trigger: "catch;"
+    replace: "catch (error) {\nconsole.error(error);"
+
+  - trigger: "function;"
+    replace: "function(){\n"
+
+  - trigger: "con;"
+    replace: "console.log($|$)"
+  - trigger: "console;"
+    replace: "console.log($|$)"
+  - trigger: "log;"
+    replace: "console.log($|$)"
+
+  - regex: "fn1(?P<person0>.*),(?P<person1>.*);"
+    replace: "({{person0}},{{person1}})=>{return }"
+  - regex: "fn2(?P<person0>.*);"
+    replace: "({{person0}})=>{return }"
+  - regex: "fn3(?P<person0>.*),(?P<person1>.*),(?P<person2>.*);"
+    replace: "({{person0}},{{person1}},{{person2}})=>{return }"
+  - regex: "fn4(?P<person0>.*),(?P<person1>.*),(?P<person2>.*),(?P<person3>.*);"
+    replace: "({{person0}},{{person1}},{{person2}},{{person3}})=>{return }"
+
+  - trigger: "fnreduce;"
+    replace: "(acc,curr,idx,arr)=>{return acc + curr}"
+  - trigger: "fnacend;"
+    replace: "(a,b)=>{return a-b}"
+  - trigger: "fndecend;"
+    replace: "(a,b)=>{return a-b}"
+
+  - regex: "tag(?P<person0>.*);"
+    replace: "<{{person0}}>$|$</{{person0}}>"
