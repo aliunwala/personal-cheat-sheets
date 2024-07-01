@@ -10,13 +10,14 @@
 matches:
   # Simple text replacement
 
-  - trigger: "for;"
-    replace: "for(let i = 0; i < .length; i++){\n$|$"
-  - trigger: "for;"
-    replace: "for(let j = 0; j < .length; j++){\n$|$"
-  - trigger: "for;"
-    replace: "for ([key, value] of Object.entries(obj)) {\n"
+  # - trigger: "for;"
+  #   replace: "for(let i = 0; i < .length; i++){\n$|$"
+  # - trigger: "for;"
+  #   replace: "for(let j = 0; j < .length; j++){\n$|$"
+  # - trigger: "for;"
+  #   replace: "for ([key, value] of Object.entries(obj)) {\n"
 
+  # Static for loops
   - trigger: "fori;"
     replace: "for(let i = 0; i < .length; i++){\n$|$"
   - trigger: "forj;"
@@ -26,6 +27,22 @@ matches:
   - trigger: "forobj;"
     replace: "for ([key, value] of Object.entries()) {\n"
 
+  # Paramterized forloops
+  # e.g fori,arrayName;
+  # - regex: "forobj(?P<array>.*);" # Dediced this was too many paramters
+  # replace: "for ([key, value] of Object.entries({{array}})) {\n"
+  # - regex: "forreg(?P<idx>.*),(?P<array>.*);"  # Dediced this was too many paramters
+  #   replace: "for(let {{idx}} = 0; {{idx}} < {{array}}.length; {{idx}}++){\n$|$"
+  - regex: "fori,(?P<array>.*);"
+    replace: "for(let i = 0; i < {{array}}.length; i++){\n$|$"
+  - regex: "forj,(?P<array>.*);"
+    replace: "for(let j = 0; j < {{array}}.length; j++){\n$|$"
+  - regex: "fork,(?P<array>.*);"
+    replace: "for(let k = 0; k < {{array}}.length; k++){\n$|$"
+  - regex: "forobj,(?P<array>.*);"
+    replace: "for ([key, value] of Object.entries({{array}})) {\n"
+
+  # Static if/else
   - trigger: "if;"
     replace: "if($|$){\n"
   - trigger: "elseif;"
@@ -33,14 +50,13 @@ matches:
   - trigger: "else;"
     replace: "else{\n$|$\n"
 
+  # Static try/catch
   - trigger: "try;"
     replace: "try {\n"
   - trigger: "catch;"
     replace: "catch (error) {\nconsole.error(error);"
 
-  - trigger: "function;"
-    replace: "function(){\n"
-
+  # Static logger
   - trigger: "con;"
     replace: "console.log($|$)"
   - trigger: "console;"
@@ -48,21 +64,31 @@ matches:
   - trigger: "log;"
     replace: "console.log($|$)"
 
-  - regex: "fn1(?P<person0>.*),(?P<person1>.*);"
-    replace: "({{person0}},{{person1}})=>{return }"
-  - regex: "fn2(?P<person0>.*);"
+  # Paramterized arrow functions
+  # e.g fn3,a,b,c;
+  - regex: "fn1,(?P<person0>.*);"
     replace: "({{person0}})=>{return }"
-  - regex: "fn3(?P<person0>.*),(?P<person1>.*),(?P<person2>.*);"
+  - regex: "fn2,(?P<person0>.*),(?P<person1>.*);"
+    replace: "({{person0}},{{person1}})=>{return }"
+  - regex: "fn3,(?P<person0>.*),(?P<person1>.*),(?P<person2>.*);"
     replace: "({{person0}},{{person1}},{{person2}})=>{return }"
-  - regex: "fn4(?P<person0>.*),(?P<person1>.*),(?P<person2>.*),(?P<person3>.*);"
+  - regex: "fn4,(?P<person0>.*),(?P<person1>.*),(?P<person2>.*),(?P<person3>.*);"
     replace: "({{person0}},{{person1}},{{person2}},{{person3}})=>{return }"
+  - trigger: "function;"
+    replace: "function(){\n"
 
+  # Static arrow functions
   - trigger: "fnreduce;"
+    replace: "(acc,curr,idx,arr)=>{return acc + curr}"
+  - trigger: "fnacc;"
+    replace: "(acc,curr,idx,arr)=>{return acc + curr}"
+  - trigger: "fnsum;"
     replace: "(acc,curr,idx,arr)=>{return acc + curr}"
   - trigger: "fnacend;"
     replace: "(a,b)=>{return a-b}"
   - trigger: "fndecend;"
     replace: "(a,b)=>{return a-b}"
 
+  # HTML DOM Stuff
   - regex: "tag(?P<person0>.*);"
     replace: "<{{person0}}>$|$</{{person0}}>"
