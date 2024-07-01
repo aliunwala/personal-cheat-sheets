@@ -8,7 +8,7 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  # Simple text replacement
+  # NOTE: I left off traling } in most/all commands as most text editors automatically add it in.
 
   # - trigger: "for;"
   #   replace: "for(let i = 0; i < .length; i++){\n$|$"
@@ -49,6 +49,10 @@ matches:
     replace: "else if($|$){\n\n"
   - trigger: "else;"
     replace: "else{\n$|$\n"
+  - trigger: "tern;"
+    replace: "($|$)?  : "
+  # - regex: "if,(?P<array>.*);"
+  #   replace: "for(let i = 0; i < {{array}}.length; i++){\n$|$"
 
   # Static try/catch
   - trigger: "try;"
