@@ -29,6 +29,24 @@ I will use {} to add block scope that allows me to reuse variable names safely l
  * Utility Functions
  ********************/
 {
+  // ******************** Reading documtation, square brackets means optional.
+  // https://stackoverflow.com/questions/17132014/how-to-interpret-documentation-for-optional-javascript-parameters
+  //  For instance in axios: https://axios-http.com/docs/instance
+  // *** Ex1: Documenation: axios#delete(url[, config])
+  // axios#delete(url) //Valid
+  // axios#delete(url,config)//Valid
+  // axios#delete(config)//Not Valid
+  // ------
+  // *** Ex2: Documentaion: axios#patch(url[, data[, config]]) // Nested brackets mean you must have data to have config.
+  // axios#patch(url) //Valid
+  // axios#patch(url, data) //Valid
+  // axios#patch(url, data, config) //Valid
+  // axios#patch(url, config ) //Not Valid
+
+  // ******************** Getting and reversing characters - ascii code
+  // console.log("\n".charCodeAt());
+  // console.log(String.fromCharCode(10))
+
   // ******************** Check if a tuple is in a set of tuples:
   const a1 = [
       [1, 2],
