@@ -15,7 +15,7 @@ Cmd+k skips the occurance you are curretly on.
 
 ## Highlight
 
-###Block Highlight
+### Block Highlight
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_column-box-selection
 You can select blocks of text by holding Shift+Alt (Shift+Option on macOS) while you drag your mouse. A separate cursor will be added to the end of each selected line.
 
