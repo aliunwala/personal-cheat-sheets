@@ -13,7 +13,9 @@ If you do not want to add all occurrences of the current selection, you can use 
 This only selects the next occurrence after the one you selected so you can add selections one by one.
 Cmd+k skips the occurance you are curretly on.
 
-## Block highlight
+## Highlight
+
+###Block Highlight
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_column-box-selection
 You can select blocks of text by holding Shift+Alt (Shift+Option on macOS) while you drag your mouse. A separate cursor will be added to the end of each selected line.
 
