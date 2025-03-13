@@ -5,8 +5,9 @@ Option+Click
 To add cursors at arbitrary positions, select a position with your mouse and use (Option+Click on macOS).
 
 ### Automatically adding cursors
-Shift+Cmd+L
-You can add additional cursors to all occurrences of the current selection with Shift+Cmd+L
+`Shift+Cmd+l` - cursors to all occurrences of the current selection with Shift+Cmd+L
+`Cmd+d` - selects the next occurrence after the one you selected
+`Cmd+k` - skips the occurance 
 
 Cmd+d AND Cmd+k
 If you do not want to add all occurrences of the current selection, you can use Cmd+D instead. 
@@ -16,22 +17,24 @@ Cmd+k skips the occurance you are curretly on.
 ## Highlight
 
 ### Block Highlight
+`Shift+Option` - Block Highlight
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_column-box-selection
 You can select blocks of text by holding Shift+Alt (Shift+Option on macOS) while you drag your mouse. A separate cursor will be added to the end of each selected line.
 
 ## Line operations
+`shift+alt+up/down` - Copy line up / down
+`TBD`- move line up down
+`control+shift+cmd+left/right`- shrink expand selection
+
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_copy-line-up-down
-Copy line up / down
-Keyboard Shortcut: shift+alt+up/down
-
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_move-line-up-and-down
-
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_shrink-expand-selection
-control+shift+cmd+left/right
+
 
 ## Navigation
-https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_go-to-symbol-in-file
 cmd+shift+o
+https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_go-to-symbol-in-file
+
 
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_undo-cursor-position
 cmd+u
