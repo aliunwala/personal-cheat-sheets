@@ -60,6 +60,8 @@ Switch between editors Keyboard Shortcut: ⌘1, ⌘2, ⌘3
 ## Extensions
 Tab out of quotes, brackets, etc
 https://marketplace.visualstudio.com/items?itemName=albert.TabOut
+https://marketplace.visualstudio.com/items?itemName=YoavBls.pretty-ts-errors
 
 ## Settings:
 editor.linkedEditing - Enables editing both html tags at the same time
+
