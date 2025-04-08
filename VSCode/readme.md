@@ -1,5 +1,7 @@
-## Cursor 
+## Cursor
+
 ### Clicking to add curosors
+
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_multi-cursor-selection
 Option+Click
 To add cursors at arbitrary positions, select a position with your mouse and use (Option+Click on macOS).
@@ -10,10 +12,10 @@ To add cursors at arbitrary positions, select a position with your mouse and use
 
 `Cmd+d` - selects the next occurrence after the one you selected
 
-`Cmd+k` - skips the occurance 
+`Cmd+k` - skips the occurance
 
 Cmd+d AND Cmd+k
-If you do not want to add all occurrences of the current selection, you can use Cmd+D instead. 
+If you do not want to add all occurrences of the current selection, you can use Cmd+D instead.
 This only selects the next occurrence after the one you selected so you can add selections one by one.
 Cmd+k skips the occurance you are curretly on.
 
@@ -38,11 +40,10 @@ https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_copy-line-up-down
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_move-line-up-and-down
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_shrink-expand-selection
 
-
 ## Navigation
+
 cmd+shift+o
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_go-to-symbol-in-file
-
 
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_undo-cursor-position
 cmd+u
@@ -58,10 +59,16 @@ Toggle Panel Keyboard Shortcut: ⌘J
 Switch between editors Keyboard Shortcut: ⌘1, ⌘2, ⌘3
 
 ## Extensions
+
 Tab out of quotes, brackets, etc
-https://marketplace.visualstudio.com/items?itemName=albert.TabOut
-https://marketplace.visualstudio.com/items?itemName=YoavBls.pretty-ts-errors
+
+- https://marketplace.visualstudio.com/items?itemName=albert.TabOut
+- https://marketplace.visualstudio.com/items?itemName=YoavBls.pretty-ts-errors
+- https://marketplace.visualstudio.com/items?itemName=vscodevim.vim
+  - Install settings files in these locations:
+    - Cmd+Shift+p => "open user settings (JSON)" => ~/Library/Application Support/Code/User/settings.json
+    - Cmd+Shift+p => "open keyboard shortcuts (JSON)" => ~/Library/Application Support/Code/User/keybindings.json
 
 ## Settings:
-editor.linkedEditing - Enables editing both html tags at the same time
 
+editor.linkedEditing - Enables editing both html tags at the same time
