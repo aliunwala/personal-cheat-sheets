@@ -6,6 +6,7 @@
         - loading : wraps the fetch
         - error:  try/catch wraps the promise
     - For alternative path logic return early.
+        - <img width="652" alt="image" src="https://github.com/user-attachments/assets/92e6b2f8-d9a0-42d2-946c-12ed9dcc42f1" />
         - For example loading/error cases can use if statement with a return. This early return happens before "golden path" return statement.    
 
 
