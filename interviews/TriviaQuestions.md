@@ -332,3 +332,68 @@
     - 1.  Creational: These patterns are designed for class instantiation. They can be either class-creation patterns or object-creational patterns.
     - 2.  Structural: These patterns are designed with regard to a class's structure and composition. The main goal of most of these patterns is to increase the functionality of the class(es) involved, without changing much of its composition.
     - 3.  Behavioral: These patterns are designed depending on how one class communicates with others.
+
+47. Cookies vs Local Storate vs Session Storage 
+    - Cookies - Small 4kb gets sent with every fetch call
+    - Local Storate - Persistant, large good for application state
+    - Session Storage - Does not persist after tab is closed, good for clearing data (in a form for example)
+
+48. Optimization to make application more performant
+    - Module Bundler
+        - Either webpack or vite
+        - polyfill - adds modern JS features to non-mondern target enviorments
+        - Compression
+        - Uglify/Minifications - rename variables/removes spaces
+        - Obfuscation - not normally used
+        - source maps - maps soruce code to final code artifact
+    - Code spliting
+        - try to only send code needed for inital load
+    - CDN
+    - Tree shaking
+        - Need es6 modules: to remove unused code
+49. Big image optimization
+    - Dimensions: Always want to ship the minimum size
+    - Compression/ Image Optimation: removes metadata/colorspace
+    - WebP format (better than PNG)
+    - Add images to CDN with proper cache policys
+    - Lazy loading as user scrolls
+    - Specify width/height so no layout shift
+    - srcSet -  to ship a set of imaages that depend on the viewport
+50.  Manage code quality in an team:
+    - Linting
+    - Ally
+    - Unit Testing    
+    - E2E Testing
+    - Dependency Scaning
+    - Ligthouse/Sentry (SEO scanners)
+51. XSS Attack
+    - Example: 
+        1) Facebook user adds comment as JS
+        2) Comment is loaded later as JS and injects code into user computer. 
+    - Sanitize inputs from user AND from the server
+    - Never use __dangerouslySetInnerHtml
+52. What is a micro front end
+    - WHen you have a larger front end team 30+ engineers 
+    - Need different team to deal with different components on the page
+    - Adds alot of complexity with state
+53. Event loop overview:
+54. Concurrent React (Async React)
+55. What is is a fiber?
+56. Optimize re-render
+57. rehydrate?
+56. Ways sibiling componets can share state:
+    1) Lift state to parent
+    2) Use state in context
+    3) State libray - redux, zustand
+57. Disadvantages of global state 
+    1) Lots of rerenders
+    2) Coupling lots of components makes things harder to move around
+    3) Testing is harder as it needs to be mocked
+58. Ways to make front end application faster:
+    1) Add a cdn
+    2) Compression
+    3) Cacheing
+    4) Bundle spliting
+    5) Image optimizaion (webP)
+59. Code spliting
+    - helps you know what code to load depending on the route webpack can split the code and only send the needed code down.

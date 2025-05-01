@@ -6,7 +6,7 @@
         - loading : wraps the fetch
         - error:  try/catch wraps the promise
     - For alternative path logic return early:
-        - ![alt text](image-1.png)
+        - ![alt text](./images/image-1.png)
         - For example loading/error cases can use if statement with a return. This early return happens before "golden path" return statement.    
 2. Code organization
     - Custom hooks
@@ -16,15 +16,15 @@
     - SOLID principles
         - Single Responsibility
             - Each component should have 1 job
-            - ![alt text](image.png)
+            - ![alt text](./images/image.png)
         - Open/Closed 
             - Open for extensions but closed to modifications
             - This simple button can be extended with onClick/Styles but cannot be modified
-            - ![alt text](image-2.png)
+            - ![alt text](./images/image-2.png)
         - Liskov Substitution
             - Subtypes must be substitutable for their base types
             - IconButton and Button Should be able to be used interchangeably
-            - ![alt text](image-3.png)
+            - ![alt text](./images/image-3.png)
         - Interface Segregation
             - Don't force clients to implement irrelevant methods
             - (more simple in react dont have unsed props in you)
@@ -70,19 +70,19 @@
 
 ## CD/CI Architecture
 ### Simplifed (Juinor Level) Architecture
-![alt text](image-4.png)
+![alt text](./images/image-4.png)
 ### Detailed (Senior Level) Architecture
 #### Before server components
-![alt text](image-5.png)
-![alt text](image-6.png)
+![alt text](./images/image-5.png)
+![alt text](./images/image-6.png)
 #### After server components
 Major changes
 1) Artifact repository now has to server node files to do server compute
-![alt text](image-7.png)
+![alt text](./images/image-7.png)
 Major changes 
 1) is we are no longer using a S3 serving static files. Now we need virtual servers for compute (EC2)
 2) We use blue/green deploments with a loadbalancer to mitigate downtime
-![alt text](image-8.png)
+![alt text](./images/image-8.png)
 
 ## Common Tools in a Stack
 ### NextJS project
