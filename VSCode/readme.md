@@ -58,6 +58,13 @@ Toggle Sidebar Keyboard Shortcut: ⌘B
 Toggle Panel Keyboard Shortcut: ⌘J
 Switch between editors Keyboard Shortcut: ⌘1, ⌘2, ⌘3
 
+## Adding the terminal command `code` to allow you to open vscode on a folder
+
+1. Make sure you drag the Visual Studio Code application into the Applications folder (And not somewhere else)
+2. Next, open Visual Studio Code Open the Command Palette via ⌘⇧P and type shell command to find the Shell Command:
+
+   ![alt text](images/image.png)
+
 ## Extensions
 
 Tab out of quotes, brackets, etc
