@@ -1,4 +1,7 @@
 {
+  // Used by Espanso. Keeps VSCode from autocompleting on periods and semicolons.
+  "editor.acceptSuggestionOnCommitCharacter": false,
+
   "editor.formatOnSave": true,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

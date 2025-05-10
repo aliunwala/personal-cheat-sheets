@@ -33,3 +33,8 @@ with vim:
 `vim /Users/aliunwala/Library/Application\ Support/espanso/match/packages/match/base.yml`
 with vscode:
 `code /Users/aliunwala/Library/Application\ Support/espanso/match/packages/match/base.yml`
+
+## In VSCode you must turn off the setting:
+
+`"editor.acceptSuggestionOnCommitCharacter": false`
+This setting causes periods and semicolons to trigger autocomplete overiding espanso
