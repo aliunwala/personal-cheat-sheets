@@ -27,6 +27,6 @@ Then copy the contents of `base.yml` into this newly created `base.yml`
 
 ![alt text](images/espansoBase.png)
 
-## Keep keep future edits to hotkeys here:
+## Keep all future edits to hotkeys here:
 
-`/Users/{user}/Library/Application\ Support/espanso/match/packages/match/base.yml`
+`vim /Users/aliunwala/Library/Application\ Support/espanso/match/packages/match/base.yml`
