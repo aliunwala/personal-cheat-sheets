@@ -29,4 +29,7 @@ Then copy the contents of `base.yml` into this newly created `base.yml`
 
 ## Keep all future edits to hotkeys here:
 
+with vim:
 `vim /Users/aliunwala/Library/Application\ Support/espanso/match/packages/match/base.yml`
+with vscode:
+`code /Users/aliunwala/Library/Application\ Support/espanso/match/packages/match/base.yml`
