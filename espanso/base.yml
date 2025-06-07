@@ -68,6 +68,30 @@ matches:
     replace: ".lastIndexOf(searchElement, fromIndex?)"
   - trigger: ".join;"
     replace: ".join(separator?)"
+  - trigger: ".splice;"
+    replace: ".splice(startIdx, deleteCount, itemsToAdd?)"
+  # - trigger: ".splicedelete;"
+  #   replace: ".splice(startIdx, deleteCount)"
+  # - trigger: ".spliceadd;"
+  #   replace: ".splice(startIdx, 0, itemsToAdd?)"
+  - trigger: ".spliceinfo;"
+    replace: |
+      Splice Format: 
+      splice(startIdx, deleteCount, itemsToAdd?)
+      splice(startIdx, deleteCount, ...[itemsToAddArr?])
+
+      Notes: 
+      toSpliced makes a copy before
+      startIdx can be negative -1 === last element
+
+      Modes of operation:      
+        Remove:    splice(startIdx, deleteCount)
+        Add:       splice(startIdx, 0, itemsToAdd)
+        Replace:   splice(startIdx, deleteCount, itemsToAdd)
+        DeleteAll: splice(startIdx)
+  - trigger: ".slice;"
+    replace: ".slice(startIdxInclusive, endIdxExclusive)"
+
   # Todo Slice Splice sortAccend sortDecend sortRandom reduceMin, reduceMax, reduceSum
   # Other
   - trigger: "setTimeout;"
