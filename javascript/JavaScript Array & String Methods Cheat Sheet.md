@@ -1,4 +1,4 @@
-# JavaScript Array & String Methods Cheat Sheet
+# JavaScript Cheat Sheet
 
 ## Array Methods
 
@@ -119,3 +119,212 @@ arr.reduce((acc, item) => {
   return acc
 }, {})
 ```
+
+# JavaScript Syntax Cheat Sheet
+
+## Nullish Coalescing & Optional Chaining
+```js
+const value = obj?.prop ?? 'default';        // nullish coalescing
+const method = obj?.method?.();               // optional method call
+const item = arr?.[0];                       // optional array access
+```
+
+## Conditional Branching
+```js
+// Ternary
+const result = condition ? 'yes' : 'no';
+
+// Short-circuit
+condition && doSomething();
+condition || setDefault();
+
+// Nullish assignment
+obj.prop ??= 'default value';
+```
+
+## Object Iteration
+```js
+// Object.entries() - most versatile
+for (const [key, value] of Object.entries(obj)) { }
+
+// Other methods
+Object.keys(obj).forEach(key => { });
+Object.values(obj).forEach(value => { });
+```
+
+## Destructuring with Renaming
+```js
+// Objects
+const {prop: newName, deep: {nested: alias}} = obj;
+const {name = 'default', age: userAge} = user;
+
+// Arrays
+const [first, second, ...rest] = array;
+const [, , third] = array;  // skip elements
+```
+
+## Class Syntax
+```js
+class MyClass extends Parent {
+  #private = 'secret';
+  
+  constructor(value) {
+    super();
+    this.value = value;
+  }
+  
+  method() { return this.value; }
+  
+  static staticMethod() { }
+  
+  get accessor() { return this.#private; }
+  set accessor(val) { this.#private = val; }
+}
+```
+
+## Prototype Inheritance
+```js
+// Function constructor
+function Person(name) { this.name = name; }
+Person.prototype.greet = function() { return `Hi, ${this.name}`; };
+
+// Object.create
+const child = Object.create(parent);
+child.method = function() { };
+```
+
+## Promise Syntax
+```js
+// Promise chain
+promise
+  .then(result => result.data)
+  .catch(error => console.error(error))
+  .finally(() => cleanup());
+
+// Async/await
+try {
+  const result = await promise;
+} catch (error) {
+  console.error(error);
+}
+
+// Promise utilities
+Promise.all([p1, p2, p3])
+Promise.race([p1, p2])
+Promise.allSettled([p1, p2])
+```
+
+## Common Browser Events
+```js
+// Mouse
+el.addEventListener('click', fn);
+el.addEventListener('dblclick', fn);
+el.addEventListener('mouseenter', fn);  // no bubbling
+el.addEventListener('mouseover', fn);   // bubbles
+
+// Keyboard
+el.addEventListener('keydown', fn);     // repeats when held
+el.addEventListener('keyup', fn);
+
+// Form
+el.addEventListener('submit', fn);
+el.addEventListener('change', fn);      // after blur
+el.addEventListener('input', fn);       // real-time
+
+// Window/Document
+window.addEventListener('load', fn);           // all resources
+document.addEventListener('DOMContentLoaded', fn); // DOM ready
+window.addEventListener('resize', fn);
+window.addEventListener('scroll', fn);
+```
+
+## Fetch API
+```js
+// GET
+const response = await fetch('/api/data');
+const data = await response.json();
+
+// POST with JSON
+const response = await fetch('/api/data', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ key: 'value' })
+});
+
+// Error handling
+if (!response.ok) throw new Error(`HTTP ${response.status}`);
+```
+
+## Timers
+```js
+// setTimeout
+const timeoutId = setTimeout(() => { }, 1000);
+clearTimeout(timeoutId);
+
+// setInterval
+const intervalId = setInterval(() => { }, 1000);
+clearInterval(intervalId);
+
+// Promise-based delay
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+await delay(1000);
+```
+
+## Array Methods (Confusing Ones)
+```js
+// Mutating vs Non-mutating
+arr.sort()        // MUTATES original
+arr.reverse()     // MUTATES original
+arr.splice()      // MUTATES original
+
+arr.slice()       // returns new array
+arr.concat()      // returns new array
+arr.toSorted()    // returns new array (newer)
+
+// Reduce patterns
+arr.reduce((acc, curr) => acc + curr, 0);           // sum
+arr.reduce((acc, curr) => ({ ...acc, [curr.id]: curr }), {}); // to object
+```
+
+## Spread & Rest
+```js
+// Spread
+const newArr = [...arr1, ...arr2];
+const newObj = { ...obj1, ...obj2 };
+fn(...args);
+
+// Rest
+function fn(...args) { }
+const [first, ...rest] = array;
+const { prop, ...others } = object;
+```
+
+## Template Literals
+```js
+// Basic
+const str = `Hello ${name}!`;
+
+// Multiline
+const html = `
+  <div>
+    <p>${content}</p>
+  </div>
+`;
+
+// Tagged templates
+const styled = css`color: ${color};`;
+```
+
+## Module Syntax
+```js
+// Export
+export const value = 123;
+export default MyClass;
+export { fn as myFunction };
+
+// Import
+import Default, { named } from './module';
+import * as Everything from './module';
+import('./module').then(mod => { }); // dynamic
+```
+
