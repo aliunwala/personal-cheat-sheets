@@ -913,4 +913,4 @@ const App = () => {
 - Comments: `{/* This is a comment */}`
 
 
-A direct link to this post can be found [here](https://github.com/aliunwala/personal-cheat-sheets/blob/main/javascript/Quick%20Reference%20-%20Javascript,%20React)
+A direct link to this post can be found [here](https://github.com/aliunwala/personal-cheat-sheets/blob/main/javascript/Quick%20Reference%20-%20Javascript,%20React.md)
