@@ -1,5 +1,7 @@
 # Quick Reference - Javascript, React
-I always found having a good reference was a great way to free up brain cells to focus on complex goals and planning. To that goal this large post acts as a searchable repository of code snippets to lower context switching while writing code. A great quote I love about this is: “paper is to write things down that we need to remember. Our brains are used to think.” ― Albert Einstein. This is a pretty 
+I always found having a good reference was a great way to free up brain cells to focus on complex goals and planning. To that goal this large post acts as a searchable repository of code snippets to lower context switching while writing code. A great quote I love about this is: 
+
+> “paper is to write things down that we need to remember. Our brains are used to think.” ― Albert Einstein. 
 
 ## Array Methods
 
